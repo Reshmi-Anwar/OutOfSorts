@@ -1,7 +1,15 @@
 public class Sorts{
-  /**Bubble sort of an int array.
-  *@postcondition The array will be modified such that the elements will be in increasing order.
-  *@param data  the elements to be sorted.
-  */
-  public static void bubbleSort(int[] data){  }
+  
+  public static void bubbleSort(int[] data){
+    int lenList = data.length;
+    for(int i = 0; i < lenList - 1; i++){
+      for(int j = 0; j < lenList - i - 1; j++){
+        if (data[j] > data[j+1]){
+          int swap = data[j];
+          data[j] = data[j + 1];
+          data[j + 1] = swap;
+        }
+      }
+    }
+  }
 }
