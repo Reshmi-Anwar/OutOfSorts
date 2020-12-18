@@ -1,5 +1,5 @@
 public class Sorts{
-  
+
   public static void bubbleSort(int[] data){
     int lenList = data.length;
     for(int i = 0; i < lenList - 1; i++){
@@ -11,5 +11,9 @@ public class Sorts{
         }
       }
     }
+  }
+
+  public static void selectionSort(int[] data){
+    
   }
 }
