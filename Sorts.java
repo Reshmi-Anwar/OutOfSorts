@@ -23,7 +23,7 @@ public class Sorts{
       }
       int swap = data[i];
       data[i] = data[index];
-      data[index] = swap;
+      data[index] =  swap;
     }
   }
 
