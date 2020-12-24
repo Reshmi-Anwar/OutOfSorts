@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 public class Driver{
   public static void main(String[]args){
     if(args.length < 2){
@@ -7,18 +8,29 @@ public class Driver{
       System.out.println("supported STYLE: random,equal,sorted,reversed");
     }else{
 
-
       int[] randData = new int[Integer.parseInt(args[0])];
 
       //overhead: 1 random array generation.
+      Random rng = new Random();
       if(args.length < 3 || args[2].equals("random")){
-	      System.out.println("YOU MUST EDIT THIS FILE BEFORE USING IT!!!! REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+        for(int i = 0; i < randData.length; i++){
+          randData[i] = rng.nextInt();
+        }
       }else if(args[2].equals("equal")){
-	      System.out.println("YOU MUST EDIT THIS FILE BEFORE USING IT!!! REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+        int x = rng.nextInt();
+        for (int i = 0; i < randData.length; i++){
+          randData[i] = x;
+        }
       }else if(args[2].equals("sorted")){
-	      System.out.println("YOU MUST EDIT THIS FILE BEFORE USING IT!!! REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+	      int x = rng.nextInt();
+        for(int i = 0; i < randData.length; i++){
+          randData[i] = i + x;
+        }
       }else if(args[2].equals("reversed")){
-	      System.out.println("YOU MUST EDIT THIS FILE BEFORE USING IT!!! REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+	      int x = rng.nextInt();
+        for(int i = 0; i < randData.length; i++){
+          randData[i] = x - i;
+        }
       }
 
       if(args[1].equals("bubble")){
@@ -31,9 +43,7 @@ public class Driver{
         Sorts.insertionSort(randData);
       }
 
-      //TEST MODE! This lets you see if your algorithm fails
-      //for a particular type of array, or size of array.
-      //This is not meant to be a timed test...
+
       else if(args[1].equals("test")){
 
         int[] randDataBubble = Arrays.copyOf(randData,randData.length);
