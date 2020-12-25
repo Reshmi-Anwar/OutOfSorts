@@ -13,7 +13,7 @@ public class Sorts{
     }
   }
 
-  public static void selectionSort(int[] data){
+  public static void selectionSort(int[] data) {
     for(int i = 0; i < data.length - 1; i++){
       int index = i;
       for(int j = i; j < data.length; j++){
@@ -28,7 +28,7 @@ public class Sorts{
   }
 
   public static void insertionSort(int[] data){
-    for(int i = 1; i < data.length; i++){
+    for(int i = 1; i < data.length; i++) {
       int x = data[i];
       int y = i - 1;
       while(x < data[y]){
@@ -40,5 +40,6 @@ public class Sorts{
       }
       data[y + 1] = x;
     }
+
   }
 }
